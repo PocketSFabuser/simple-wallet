@@ -46,7 +46,7 @@ input, .description-input {
     color: #D32F2F;
     font-size: 2.5vh;
     position: absolute;
-    right: 38vh;
+    right: 35%;
     opacity: 1;
     padding: 0 1vh;
     z-index: 2;

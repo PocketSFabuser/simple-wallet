@@ -69,7 +69,6 @@ function renderTransactions() {
         <div class="transaction ${transaction.type}">
             <div class="transaction-info">
                 <span>${transaction.type === 'income' ? 'Доход' : 'Расход'}</span>
-                <span>${transaction.date}</span>
                 <span>${transaction.description}</span>
             </div>
             <span class="transaction-amount">${transaction.type === 'income' ? '+' : '-'} ${transaction.amount.toFixed(2)} ₽</span>
