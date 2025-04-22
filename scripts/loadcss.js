@@ -1,20 +1,24 @@
 // Определение устройства и загрузка соответствующего CSS
 function loadDeviceSpecificCSS() {
     const screenWidth = window.innerWidth;
-    let cssFile = 'style-pc.css'; // По умолчанию для ПК
+    let cssFile = 'style-pc.css';
+    let deviceClass = 'device-desktop';
 
-    // Определение типа устройства
     if (/Mobi|Android/i.test(navigator.userAgent)) {
-        cssFile = screenWidth < 768 ? 'style-phone.css' : 'style-phone.css';
+        cssFile = 'style-phone.css';
+        deviceClass = screenWidth < 768 ? 'device-mobile' : 'device-tablet';
     }
 
-    // Создание элемента стилей
+    // Добавляем класс к тегу body
+    document.body.classList.remove('device-desktop', 'device-mobile', 'device-tablet');
+    document.body.classList.add(deviceClass);
+
+    // Остальной код загрузки CSS без изменений
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = `styles/${cssFile}`;
     link.id = 'device-css';
     
-    // Удаление предыдущей версии стилей
     const oldLink = document.getElementById('device-css');
     if (oldLink) oldLink.remove();
     

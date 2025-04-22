@@ -65,16 +65,35 @@ function resetData() {
 
 function renderTransactions() {
     const container = document.getElementById('transactions');
-    container.innerHTML = transactions.map(transaction => `
+    container.innerHTML = transactions.map((transaction, index) => `
         <div class="transaction ${transaction.type}">
             <div class="transaction-info">
                 <span>${transaction.type === 'income' ? 'Доход' : 'Расход'}</span>
+                <span>${transaction.date}</span>
                 <span>${transaction.description}</span>
             </div>
-            <span>${transaction.type === 'income' ? '+' : '-'} ${transaction.amount.toFixed(2)} ₽</span>
+            <span class="transaction-amount">${transaction.type === 'income' ? '+' : '-'} ${transaction.amount.toFixed(2)} ₽</span>
+            <span class="delete-transaction-btn" data-index="${index}">&times;</span>
         </div>
     `).join('');
 }
+
+// Delete transaction by index and update UI
+function deleteTransaction(index) {
+    if (index >= 0 && index < transactions.length) {
+        transactions.splice(index, 1);
+        updateBalance();
+        renderTransactions();
+    }
+}
+
+// Event delegation for delete buttons
+document.getElementById('transactions').addEventListener('click', (event) => {
+    if (event.target.classList.contains('delete-transaction-btn')) {
+        const index = parseInt(event.target.getAttribute('data-index'), 10);
+        deleteTransaction(index);
+    }
+});
 
 // Инициализация
 updateBalance();
