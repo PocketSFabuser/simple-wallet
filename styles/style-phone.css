@@ -8,7 +8,7 @@ body {
 }
 
 .balance {
-    font-size: 3.4vh;
+    font-size: 2.7vh;
     margin-bottom: 1.89vh;
     padding: 1.41vh;
     background-color: #2d2d2d;
@@ -50,6 +50,7 @@ input, .description-input {
 }
 
 button {
+    font-size: 1.5vh;
     padding: 1.41vh;
     cursor: pointer;
     border: none;
@@ -59,9 +60,6 @@ button {
     animation-fill-mode: forwards;
     width: 100%;
     box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
 }
 
 .income-btn {
@@ -75,8 +73,9 @@ button {
 }
 
 .reset-btn {
+    font-size: 1.5vh;
     width: 17vh;
-    height: 7vh;
+    height: 6vh;
     background-color: #616161;
     color: white;
 }
@@ -96,6 +95,7 @@ button {
 }
 
 .modal {
+    font-size: 2vh;
     background-color: #2d2d2d;
     padding: 1.89vh;
     border-radius: 0.75vh;
@@ -103,7 +103,7 @@ button {
     max-width: 37.77vh;
     width: 90%;
     color: #e0e0e0;
-    text-align: center;
+    text-align: left;
 }
 
 .modal-buttons {
@@ -113,12 +113,13 @@ button {
 }
 
 .modal-button {
+    font-size: 2vh;
     padding: 0.95vh 1.89vh;
     border: none;
     border-radius: 0.56vh;
     font-weight: 600;
     cursor: pointer;
-    width: 18.89vh;
+    width: 15vh;
     transition: background-color 0.2s;
 }
 
@@ -206,6 +207,7 @@ width: 0.56vh;
 }
 
 .transaction-info {
+font-size: 1.5vh;
 display: flex;
 flex-direction: column;
 gap: 0.47vh;
@@ -216,6 +218,7 @@ z-index: 1;
 h3 {
     font-size: 3vh;
 }
+
 .balance-controls {
     display: flex;
     gap: 0.95vh;
@@ -237,7 +240,7 @@ h3 {
 .modal-header {
     display: flex;
     justify-content: flex-end;
-    margin-bottom: 1.41vh;
+    margin-bottom: -0.4vh;
 }
 
 .close-modal {

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title> Your wallet </title>
-    <link rel="stylesheet" href="./styles/style-pc.css">
+    <script src="./scripts/loadcss.js"></script>
 </head>
 <body>
     <div class="balance">
@@ -29,8 +29,7 @@
         <div id="transactions"></div>
     </div>
 
-    <script src="./scripts/main.js"></script>
-    <!-- Modal HTML -->
+    <!-- Reset Modal -->
     <div id="resetModal" class="modal-overlay">
         <div class="modal">
             <div>Вы уверены, что хотите сбросить все данные?</div>
@@ -40,6 +39,18 @@
             </div>
         </div>
     </div>
+
+    <!-- Error Modal -->
+    <div id="errorModal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <span class="close-modal">&times;</span>
+            </div>
+            <div id="errorMessage" class="modal-content"></div>
+        </div>
+    </div>
+
+    <script src="./scripts/main.js"></script>
     <script src="./scripts/modal-to-reset.js"></script>
 </body>
 </html>
